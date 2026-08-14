@@ -9,9 +9,13 @@ The goal is to understand how to create a Pod, verify that it is running, inspec
 ### Technologies Used
 
 Kubernetes
+
 Minikube
+
 kubectl
+
 Docker
+
 Windows / WSL2
 
 ### Prerequisites
@@ -19,7 +23,9 @@ Windows / WSL2
 Before starting, ensure the following are installed:
 
 Docker Desktop
+
 Minikube
+
 kubectl
 
 
@@ -155,7 +161,7 @@ minikube ssh
 To see the application running:
 
 ```
-curl  10.244.0.5
+curl 10.244.0.5
 ```
 
 
