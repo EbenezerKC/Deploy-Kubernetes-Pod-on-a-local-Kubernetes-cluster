@@ -163,7 +163,54 @@ To see the application running:
 ```
 curl 10.244.0.5
 ```
+### Kubernetes Deployment
 
+Creating a deployment: The following is an example of a Deployment. It creates a ReplicaSet to bring up three nginx Pods:
+You can get this following from Kubernetes deployment documentation.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
+### Create a deployment file and paste the above codes in it, you can edit according to your desired output
+
+```
+vim deployment.yml
+```
+Create the deployment:
+
+```
+kubectl apply -f deployment.yml
+```
+Then:
+
+```
+kubectl get deploy
+```
+To get more details run:
+
+```
+kubectl get deploy -o wide
+```
 
 ### Project Outcome
 
